@@ -1,89 +1,126 @@
-# Advanced Cheating Detection System
+# 🎓 Advanced Cheating Detection System
 
-A sophisticated real-time cheating detection system that uses computer vision and facial landmark analysis to monitor students during exams. The system employs advanced eye tracking and gaze direction analysis to detect when students look away from their papers.
+A powerful real-time exam monitoring system that leverages computer vision and facial landmark detection to identify suspicious behavior during online assessments. This tool uses advanced eye tracking and gaze direction analysis to detect when students look away from their screens or close their eyes.
 
-## Features
+## 🚀 Key Features
 
-- Real-time face detection using dlib
-- Advanced eye tracking using 68 facial landmarks
-- Eye Aspect Ratio (EAR) calculation for precise eye state detection
-- Gaze direction analysis to detect looking away behavior
-- Multiple student monitoring support
-- Live webcam feed with detailed status overlay
-- Visual feedback with eye contours and measurements
-- Real-time display of gaze angles and EAR values
+- 🔍 Real-time face detection using `dlib`
+- 👁️ 68-point facial landmark tracking for precision
+- 📐 Eye Aspect Ratio (EAR) calculation to detect eye closure
+- 👀 Gaze direction analysis to flag off-screen glances
+- 👨‍🏫 Multi-student tracking and status reporting
+- 📸 Live webcam feed with visual feedback and overlays
+- 🧮 Real-time display of EAR and gaze angles
+- 🎨 Colored status indicators (Focused / Looking Away / Eyes Closed)
 
-## Technical Details
+## 🧠 How It Works
 
-The system uses several advanced techniques:
-- Eye Aspect Ratio (EAR) calculation to determine if eyes are open/closed
-- Gaze direction analysis using facial landmark positions
-- Contour-based eye tracking for better accuracy
-- Real-time status updates with numerical measurements
+The system detects faces and landmarks in real time, then:
+- Calculates the **Eye Aspect Ratio (EAR)** to determine if the eyes are closed
+- Analyzes the **gaze direction** based on eye landmarks
+- Flags students looking away or closing eyes during the session
+- Displays each student's status and related measurements on screen
 
-## Prerequisites
+## 🛠️ Technical Highlights
 
-- Python 3.8 or higher
-- Webcam with good resolution
-- Required Python packages (listed in requirements.txt)
-- Good lighting conditions for optimal face detection
+- EAR threshold (default < `0.2`) for eye closure detection
+- Gaze angle threshold (default > `30°`) for distraction detection
+- Color-coded feedback:
+  - 🟢 Focused
+  - 🔴 Eyes closed or looking away
 
-## Installation
+## 📦 Requirements
 
-1. Clone this repository:
+- Python 3.8+
+- Webcam (HD preferred)
+- Good ambient lighting
+- Required libraries listed in `requirements.txt`
+- `shape_predictor_68_face_landmarks.dat` model file from [dlib's official site](http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2)
+
+## 🔧 Installation
+
+1. **Clone the repository:**
 ```bash
 git clone <repository-url>
 cd cheating-detection
 ```
 
-2. Install the required dependencies:
+2. **Install dependencies:**
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Download the required model files:
-- The system uses the `shape_predictor_68_face_landmarks.dat` file for facial landmark detection
-- Make sure this file is in the same directory as the main script
+3. **Download the shape predictor model:**
+- Download from: [http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2](http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2)
+- Extract and place the `.dat` file in your project directory
 
-## Usage
+## ▶️ Usage
 
-1. Run the main script:
+1. **Run the script:**
 ```bash
 python "cheating detection.py"
 ```
 
-2. The system will:
-- Open your webcam feed
-- Detect faces in real-time
-- Track eye movements and gaze direction
-- Calculate Eye Aspect Ratio (EAR)
-- Display detailed status for each detected student including:
-  - Gaze angle in degrees
+2. **Live feed actions:**
+- Detects faces and eyes
+- Tracks multiple students
+- Displays status:
+  - Gaze angle (in degrees)
   - EAR value
-  - Current status (Focused/Looking away/Eyes closed)
+  - Focus status
 
-3. Status Indicators:
-- Green: Student is focused
-- Red: Student is looking away or eyes are closed
+3. **Controls:**
+- Press `q` to exit the program
 
-4. To exit the program:
-- Press 'q' on your keyboard
+## ⚙️ Detection Parameters
 
-## Detection Parameters
+You can tweak these thresholds in the script for better accuracy:
+- `EAR < 0.2` → Eyes might be closed
+- `Gaze angle > 30°` → Student is likely looking away
 
-The system uses the following thresholds:
-- EAR (Eye Aspect Ratio) < 0.2: Indicates eyes might be closed
-- Gaze angle > 30 degrees: Indicates looking away from the paper
-- These values can be adjusted in the code based on specific requirements
+## 📌 Tips for Best Performance
 
-## Notes
+- Ensure students are **facing the webcam directly**
+- Maintain **good lighting** conditions
+- Use a **stable webcam feed**
+- Avoid low-resolution or grainy video
 
-- The system requires good lighting conditions for optimal face detection
-- Make sure your webcam is properly connected and accessible
-- The facial landmark predictor file (`shape_predictor_68_face_landmarks.dat`) must be present in the project directory
-- For best results, ensure students are facing the camera directly
-- The system works best when students maintain a consistent distance from the camera
+## 📄 License
 
-## License
+This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+---
+
+**Built with ❤️ by Tehmeen – AI & ML Developer**
+
+🔗 [LinkedIn](www.linkedin.com/in/tehmeen-sajjad-a13866254) | 💼 [Fiverr](https://www.fiverr.com/official_codes)  
+#AI #CheatingDetection #Python #ComputerVision #OpenCV #dlib #ExamProctoring
+
+## ✅ Benefits
+
+- Automates exam monitoring, reducing the need for manual invigilation
+- Provides instant alerts for suspicious behaviors
+- Enhances academic integrity in remote settings
+- Easily adaptable to various environments and exam formats
+- Can be extended to work with recorded videos and streaming platforms
+
+## 💡 Use Cases
+
+- Online exams and quizzes
+- Remote proctoring platforms
+- E-learning environments
+- Virtual classrooms
+- AI-based surveillance research
+
+## 📞 Contact
+
+For collaboration, customization, or freelance projects, feel free to reach out:
+
+📧 Email: [tehmeen315@yahoo.com]  
+🌐 Portfolio: [https://github.com/Tehmeen15]  
+📱 LinkedIn: [https://www.linkedin.com/in/tehmeen-sajjad-a13866254]  
+💼 Fiverr: [https://www.fiverr.com/official_codes]
+
+---
+
+🛡️ This project ensures fair assessment in a virtual education world, powered by AI.
